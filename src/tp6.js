@@ -1,8 +1,8 @@
 class Personne {
-  constructor (nom, prenom, age){
-    this.nom = nom;
-    this.prenom = prenom;
-    this.age = age;
+  constructor (nom, prenom, age) {
+    this.nom = nom
+    this.prenom = prenom
+    this.age = age
   }
   toString() {
     return `${this.nom} ${this.prenom} ${this.age} ans`;
@@ -42,11 +42,12 @@ const enfant2 = new Enfant('Lecoq', 'Vanessa', 12, '6eme');
  * @param personnes Array contenant des Personne
  */
 function afficherIdentitePersonnes(personnes) {
+  let superThis = this
   personnes.forEach(function(element) {
     setTimeout(function () {
       try {
         if (element instanceof Enfant) {
-          let error = new Error('C\'est un enfant');
+          const error = new Error('C\'est un enfant');
           error.nom = element.nom;
 
           throw error;
